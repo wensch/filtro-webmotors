@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+}
+.loading {
+  // background-color: $text-highlight;
+  background-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  height: 80px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  transition: opacity .3s;
+  width: 80px;
+  z-index: 2;
+
+  &.-active {
+    opacity: 1;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    opacity: 0.6;
+    background-color: $text-highlight;
+    animation: transform_scale 2s ease-in-out infinite;
+  }
+  &:after {
+    animation-delay: -0.5s;
+    opacity: 0.5;
+  }
+
+  .overlay {
+    background-color: $gray-light;
+    height: 100%;
+    left: -50vw;
+    position: absolute;
+    width: 100vw;
+  }
+}
+
+@keyframes transform_scale {
+  0% {
+    transform: scale(0,0); 
+  }
+  100% {
+    transform: scale(1,1);
+    opacity: 0;
+  }
+}

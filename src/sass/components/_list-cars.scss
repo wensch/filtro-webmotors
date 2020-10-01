@@ -1,0 +1,123 @@
+.list-cars {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  align-items: flex-start;
+
+  .car {
+    box-shadow: rgba(158, 184, 209, 0.41) 0px 2px 9px 0px;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: calc((100% / 3) - 20px);
+
+    @media (max-width: $breakpoints-mobile) {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &-image-holder {
+      overflow: hidden;
+      position: relative;
+      min-height: 150px;
+      margin-bottom: 20px;
+    }
+    &-image {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      // height: 100%;
+      max-width: 100%;
+    }
+
+    &-title {
+      color: $dark-color;
+      font-size: 20px;
+      position: relative;
+      text-transform: uppercase;
+      display: block;
+
+      @media (max-width: $breakpoints-tablet) {
+        font-size: 18px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        height: 3px;
+        background-color: $dark-color;
+        margin-bottom: 20px;
+        margin-top: 3px;
+        width: 100%;
+      }
+
+      // Colors
+      &.-Azul {
+        &:after {background-color: #1e51a3;}
+        .car-model{border-color: #1e51a3;}
+      }
+      &.-Branco,
+      &.-Branca {
+        &:after {background-color:#e2d8c7;}
+        .car-model{border-color: #e2d8c7;}
+      }
+      &.-Vermelho {
+        &:after {background-color: #f01c08;}
+        .car-model{border-color: #f01c08;}
+      }
+      &.-Cinza {
+        &:after {background-color: #636f80;}
+        .car-model{border-color: #636f80;}
+      }
+    }
+
+    &-model {
+      border: solid 3px;
+      border-radius: 3px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      position: absolute;
+      font-size: 16px;
+      bottom: 0;
+      right: 0;
+
+       @media (max-width: $breakpoints-tablet) {
+        padding: 5px;
+      }
+    }
+
+    &-content {
+      padding: 0 15px 20px;
+      box-sizing: border-box;
+    }
+
+    &-info {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      
+      &.-model {
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      &.-version {
+        min-height: 33px;
+      }
+
+      &.-price {
+        font-size: 22px;
+        color: $text-highlight;
+        font-weight: 700;
+      }
+    }
+
+
+  }
+}

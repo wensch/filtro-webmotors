@@ -1,0 +1,16 @@
+$breakpoints-tablet: 1024px;
+$breakpoints-mobile: 767px;
+@import '../../node_modules/sass-mq/mq';
+
+body {
+  background-color: $gray-light;
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 933px;
+  margin: 0 auto;
+  position: relative;
+}

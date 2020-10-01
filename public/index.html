@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Webmotors - Frontend">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+
+		<!-- Homescreen Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="">
+
+		<!-- Homescreen iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="">
+		<link rel="icon" href="https://www.webmotors.com.br/assets/img/webmotors.svg?t=1000" type="image/x-icon">
+
+		<link rel="stylesheet" href="/css/styles.css">
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<a href="/" title="Webmotors">
+					<img src="https://www.webmotors.com.br/assets/img/webmotors.svg?t=2339" alt="" class="logo">
+				</a>
+			</div>
+		</header>
+		<div class="filter">
+			<div class="container">
+
+				<div class="tabs">
+					<div class="tab -active">
+						<i class="fas fa-car"></i>
+						<span class="tab-title">Comprar <strong>Carros</strong></span>
+					</div>
+					<div class="tab">
+						<i class="fas fa-motorcycle"></i>
+						<span class="tab-title">Comprar <strong>Motos</strong></span>
+					</div>
+				</div>
+				<form action="#" class="form" data-component="form">
+					<div class="form-fields">
+						<div class="form-location-price">
+							<strong class="form-title">Localização</strong>
+							<div class="form-location">
+								<div class="form-input-group">
+									<label for="place"><i class="fas fa-map-marker-alt"></i> Onde:</label>
+									<input type="text" id="place" value="São Paulo">
+								</div>
+								<div class="form-input-group">
+									<label for="raio">Raio:</label>
+									<input type="text" id="raio" value="100km">
+								</div>
+							</div>
+							<div class="form-location">
+								<div class="form-select-group">
+									<label for="ano">Ano</label>
+									<select name="YearModel" id="ano">
+										<option value="0" selected disabled>Todas</option>
+									</select>
+								</div>
+								<div class="form-select-group">
+									<label for="preco">Preço</label>
+									<select name="Price" id="preco">
+										<option value="0" selected>Faixa de preço</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-filters">
+							<strong class="form-title">Detalhes carros</strong>
+							<div class="form-select-group">
+								<label for="make">Marca:</label>
+								<select name="Make" id="make">
+									<option value="0" selected >Todas</option>
+								</select>
+							</div>
+							<div class="form-select-group">
+								<label for="model">Modelo:</label>
+								<select name="Model" id="model">
+									<option value="0" selected disabled>Todos</option>
+								</select>
+							</div>
+							<div class="form-select-group">
+								<label for="version">Versão:</label>
+								<select name="Version" id="version">
+									<option value="0" selected>Todas</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-buttons">
+						<button id="limpar-filtro" type="button" class="form-clear-filter">Limpar filtro</button>
+						<button id="btn-submit" type="button" class="form-submit">Ver ofertas</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-information">
+			<div class="container">
+				<button class="close-modal -icon"><i class="fas fa-times"></i></button>
+				<h2>Parece que o filtro não funcionou né? <i class="far fa-grin-beam-sweat"></i></h2>
+				<p>Como esse é só um teste, o filtro e a listagem <strong>são módulos separados</strong>, pois a API que alimenta os selects <span>Marca, Modelo e Versão</span> trazem resultados diferentes da API de Veículos</p>
+				<p>Fique tranquilo, viage pelos cards de veículos através da paginação!</p>
+			</div>
+			<div class="overlay"></div>
+		</div>
+		<div class="container">
+			<div class="loading -active"><div class="overlay"></div></div>
+			<div class="list-cars"></div>
+			<div class="pagination">
+				<div class="pagination-list">
+					<span class="pagination-item-decrement"><i class="fas fa-angle-left"></i></span>
+					<span class="pagination-item -active" data-value="1">1</span>
+					<span class="pagination-item" data-value="2">2</span>
+					<span class="pagination-item" data-value="3">3</span>
+					<span class="pagination-item-increment"><i class="fas fa-angle-right"></i></span>
+				</div>
+			</div>
+		</div>
+		
+		<script src="/js/app.js"></script>
+	</body>
+</html>
