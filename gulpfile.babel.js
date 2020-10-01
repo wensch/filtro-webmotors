@@ -54,7 +54,7 @@ gulp.task('scripts', () => {
 });
 
 // Browser-Sync
-gulp.task('serve', ['styles'], () => {
+gulp.task('serve', ['styles', 'scripts'], () => {
     browserSync({
         notify: false,
         logPrefix: 'H5ES6',
